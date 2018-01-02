@@ -22,3 +22,16 @@ $ python3 app.py
  * Use your telegram to search @TaiwanVolleyball_bot
  
  * Finally, you can interact with my chatbot
+
+## Basic function
+
+使用者可隨便輸入，機器人會回傳圖片及說明。正常指令包含：
+*	help：幫助使用者了解如何操作
+*	search：進入查詢的階段，使用者可以**按鈕**或**打字**回答
+
+## Advanced function
+
+*	使用**BeautifulSoup**抓取網頁內容
+*	使用**reply_photo**以及**telegram.ReplyKeyboardMarkup**()等function
+*	使用random回覆使用者不正確的輸出，並加入**圖片**為輸出
+* 文字即是超連結，可直接點選進入網頁
