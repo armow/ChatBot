@@ -35,3 +35,6 @@ $ python3 app.py
 *	使用**reply_photo**以及**telegram.ReplyKeyboardMarkup**()等function
 *	使用random回覆使用者不正確的輸出，並加入**圖片**為輸出
 * 文字即是超連結，可直接點選進入網頁
+
+## Finite State Machine
+![fsm](./show-fsm.png)
