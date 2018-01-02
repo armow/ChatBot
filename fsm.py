@@ -49,7 +49,14 @@ class TocMachine(GraphMachine):
     
     def is_going_to_content(self, update):
         text = update.message.text
-        return text.lower() == '台電女排' or text.lower()=='中國人纖' or text=='ATTACKLINE' or text.lower()=='匯竑國際' or text.lower()=='台電男排' or text.lower()=='國訓中心' or text=='MIZUNO' or text.lower()=='長力育樂' or text.lower()=='桃園石易'
+        if  text.lower() == '台電女排' or text.lower()=='中國人纖' or text=='ATTACKLINE' or text.lower()=='匯竑國際' or text.lower()=='台電男排' or text.lower()=='國訓中心' or text=='MIZUNO' or text.lower()=='長力育樂' or text.lower()=='桃園石易':
+            return True
+        elif text.lower()=='所有隊伍':
+            return False
+        else:
+            print(text.lower())
+            update.message.reply_text("沒有這個隊伍喔！再選擇一次吧")
+        #return text.lower() == '台電女排' or text.lower()=='中國人纖' or text=='ATTACKLINE' or text.lower()=='匯竑國際' or text.lower()=='台電男排' or text.lower()=='國訓中心' or text=='MIZUNO' or text.lower()=='長力育樂' or text.lower()=='桃園石易'
     
     def on_enter_help(self, update):
         update.message.reply_text("輸入「search」來查詢吧！！不然亂輸入就給你欣賞帥氣球員照片喔")

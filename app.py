@@ -8,7 +8,7 @@ from fsm import TocMachine
 from pygraphviz import *
 
 API_TOKEN = '517911978:AAFmJsGB5rNOW_6_SuxT5WqyVe7IObOz95w'
-WEBHOOK_URL = 'https://fb9479ec.ngrok.io/hook'
+WEBHOOK_URL = 'https://1bd2eeee.ngrok.io/hook'
 
 app = Flask(__name__)
 bot = telegram.Bot(token=API_TOKEN)
@@ -124,7 +124,7 @@ def show_fsm():
     machine.graph.draw(byte_io, prog='dot', format='png')
     byte_io.seek(0)
     return send_file(byte_io, attachment_filename='fsm.png', mimetype='image/png')"""
-machine.graph.draw('fsm.png',prog='dot')
+machine.graph.draw('show-fsm.png',prog='dot')
 
 if __name__ == "__main__":
     _set_webhook()
