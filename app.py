@@ -8,7 +8,7 @@ from fsm import TocMachine
 from pygraphviz import *
 
 API_TOKEN = '517911978:AAFmJsGB5rNOW_6_SuxT5WqyVe7IObOz95w'
-WEBHOOK_URL = 'https://86f8018e.ngrok.io/hook'
+WEBHOOK_URL = 'https://1340ac2f.ngrok.io/hook'
 
 app = Flask(__name__)
 bot = telegram.Bot(token=API_TOKEN)
@@ -23,7 +23,9 @@ machine = TocMachine(
         'result',
         'content',
         'member',
-        'intro'
+        'intro',
+        'photo',
+        'number'
     ],
     transitions=[
         {
@@ -59,6 +61,12 @@ machine = TocMachine(
         {
             'trigger':'advance',
             'source':'search',
+            'dest':'photo',
+            'conditions':'is_going_to_photo'
+        },
+        {
+            'trigger':'advance',
+            'source':'search',
             'dest':'result',
             'conditions':'is_going_to_result'
         },
@@ -73,6 +81,12 @@ machine = TocMachine(
             'source':'team',
             'dest':'content',
             'conditions':'is_going_to_content'
+        },
+        {
+            'trigger':'advance',
+            'source':'photo',
+            'dest':'number',
+            'conditions':'is_going_to_number'
         },
         {
             'trigger':'advance',
@@ -94,10 +108,12 @@ machine = TocMachine(
                 'member',
                 'table',
                 'result',
-                'intro'
+                'intro',
+                'content',
+                'number'
             ],
             'dest':'search'
-        }
+        }, 
         ],
     initial='user',
     auto_transitions=False,
