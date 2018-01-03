@@ -8,7 +8,7 @@ from fsm import TocMachine
 from pygraphviz import *
 
 API_TOKEN = '517911978:AAFmJsGB5rNOW_6_SuxT5WqyVe7IObOz95w'
-WEBHOOK_URL = 'https://1bd2eeee.ngrok.io/hook'
+WEBHOOK_URL = 'https://86f8018e.ngrok.io/hook'
 
 app = Flask(__name__)
 bot = telegram.Bot(token=API_TOKEN)
