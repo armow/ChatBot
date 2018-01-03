@@ -118,6 +118,7 @@ class TocMachine(GraphMachine):
         update.message.reply_text("106企業十三年甲級男女排球聯賽") 
         update.message.reply_text("官網：http://tvl.ctvba.org.tw/") 
         update.message.reply_text("FB：https://www.facebook.com/CTVBA888/") 
+        update.message.reply_text("直播：http://video.foxsports.com.tw/")
         update.message.text=""
         self.go_back(update)
 
